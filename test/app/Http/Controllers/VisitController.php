@@ -29,7 +29,7 @@ class VisitController
         $newVisit->ip = $ip;
         $newVisit->start_time = $start;
         $newVisit->stop_time = $start;
-        $newVisit->visit_time = '';
+        $newVisit->visit_time = null;
         $newVisit->save();
 
         return view('welcome');
@@ -50,7 +50,7 @@ class VisitController
                     $visit_time = $start_time->diff($stop_time);
                     $visit->update([ // entry completion
                         'stop_time' => $stop_time,
-                        'visit_time' => $visit_time->format('%d дней %h часов %i минут %s секунд'),
+                        'visit_time' => $visit_time->format('%i минут %s секунд'),
                     ]);
                 }
             }

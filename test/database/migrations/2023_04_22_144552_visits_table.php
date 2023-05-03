@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('ip');
             $table->dateTime('start_time');
             $table->dateTime('stop_time');
-            $table->string('visit_time');
+            $table->string('visit_time')->nullable();
         });
     }
 
